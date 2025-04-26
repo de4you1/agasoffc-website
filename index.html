@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewa Bot Deline Clarissa</title>
+    <style>
+        :root {
+            --primary: #8a2be2;
+            --secondary: #ff69b4;
+            --dark: #2c0a4d;
+            --light: #f8f1ff;
+            --accent: #ff1493;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark), #4b0082);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(44, 10, 77, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--primary);
+            backdrop-filter: blur(10px);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .bot-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            border: 3px solid white;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pricing-section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .price-item {
+            background: rgba(138, 43, 226, 0.2);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            background: rgba(138, 43, 226, 0.3);
+        }
+        
+        .price-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        
+        .price-item:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .price-duration {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .price-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .benefits-section {
+            margin-bottom: 30px;
+        }
+        
+        .benefit-item {
+            background: rgba(255, 105, 180, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            background: rgba(255, 105, 180, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .benefit-title {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .benefit-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .benefit-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 5px;
+        }
+        
+        .benefit-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .note {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .price-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="bot-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1>Sewa Bot Deline Clarissa</h1>
+            <p>Solusi lengkap untuk mengelola grup Anda dengan fitur premium!</p>
+        </header>
+        
+        <section class="pricing-section">
+            <h2>Paket Harga Sewa</h2>
+            <div class="price-list">
+                <div class="price-item">
+                    <div class="price-duration">🛒 1 Minggu</div>
+                    <div class="price-amount">Rp.3.000</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-duration">🛒 1 Bulan <span class="highlight">(Free Premium 30 hari)</span></div>
+                    <div class="price-amount">Rp.10.000</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-duration">🛒 3 Bulan <span class="highlight">(Free Premium 90 hari)</span></div>
+                    <div class="price-amount">Rp.30.000</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-duration">🛒 8 Bulan <span class="highlight">(Free Premium 60 hari)</span></div>
+                    <div class="price-amount">Rp.80.000</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-duration">🛒 Permanent <span class="highlight">(Free Permanent)</span></div>
+                    <div class="price-amount">Rp.200.000</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="benefits-section">
+            <h2>Keuntungan Sewa Bot</h2>
+            
+            <div class="benefit-item">
+                <div class="benefit-title">1️⃣ Khusus Untuk Penyewa:</div>
+                <ul class="benefit-list">
+                    <li>Sewa 1 Bulan = Free Premium 30 hari</li>
+                    <li>Sewa 3 Bulan = Free Premium 90 hari</li>
+                    <li>Sewa 8 Bulan = Free Premium 60 hari</li>
+                    <li>Sewa Permanent = Free Permanent</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-title">2️⃣ Jaga Grup dari:</div>
+                <ul class="benefit-list">
+                    <li>Anti Virus</li>
+                    <li>Anti Toxic</li>
+                    <li>Anti Spam</li>
+                    <li>Anti Link Grup lain</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-title">3️⃣ Bermain Game:</div>
+                <ul class="benefit-list">
+                    <li>Tebak-tebakan</li>
+                    <li>Teka teki</li>
+                    <li>Rpg</li>
+                    <li>Dan game seru lainnya</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-title">4️⃣ Akses fitur Maker & Tools:</div>
+                <ul class="benefit-list">
+                    <li>Membuat Stiker</li>
+                    <li>Edit Nama</li>
+                    <li>Add/Kick Pakai Bot</li>
+                    <li>Dan 1220 Fitur Lainnya</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <p>MINAT? Segera hubungi kami untuk informasi lebih lanjut!</p>
+            <a href="https://wa.me/6281277721026" class="cta-button">
+                <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+            </a>
+            <p class="note">*Harga dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya</p>
+        </section>
+    </div>
+</body>
+</html>
